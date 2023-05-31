@@ -1,0 +1,20 @@
+
+server:
+  port: 8000
+  #相当于一个客户端,要注册到eureka里
+
+spring:
+  application:
+    name: gavin_order
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: gavin
+    password: 955945
+    url: jdbc:mysql://172.23.141.26:3306/gavin
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka
+  #    register-with-eureka: true  #是否往eureka里注册  这里要注册了,也要拉取,同时在springboot启动类中添加 注解@EnableEurekaClient来标记位客户端
+  #   fetch-registry: true      #是否从注册中心拉取

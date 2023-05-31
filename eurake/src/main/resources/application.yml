@@ -1,0 +1,13 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: gavin_eureka
+eureka:
+  instance:
+    hostname: gavin_eureka
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka
+    register-with-eureka: false  #是否往eureka里注册   不注册也不拉取,因为本身就作为eureka-server,同时通过注解 在springbooot启动类上注解  @EnableEurekaServer 来标为注册中心服务端
+    fetch-registry: false      #是否从注册中心拉取
